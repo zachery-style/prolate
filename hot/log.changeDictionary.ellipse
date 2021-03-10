@@ -1,0 +1,57 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _7bdb509494-20201222 OPENFOAM=2012
+Arch   : "LSB;label=32;scalar=64"
+Exec   : changeDictionary -region ellipse
+Date   : Mar 10 2021
+Time   : 13:14:19
+Host   : LAPTOP-40EVH70C
+PID    : 2002
+I/O    : uncollated
+Case   : /home/zstyle/OpenFOAM_files/hot
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh ellipse for time = 0
+
+Read dictionary changeDictionaryDict with replacements for dictionaries 2(boundary T)
+Reading polyMesh/boundary file to extract patch names
+Loaded dictionary boundary with entries 1(ellipse_to_fluid)
+Extracted patch groups:
+    group wall with patches 1(ellipse_to_fluid)
+Replacing entries in dictionary boundary
+Special handling of boundary as polyMesh/boundary file.
+Merging entries from 0()
+fieldDict:
+{
+    ellipse_to_fluid
+    {
+        type            mappedWall;
+        inGroups        1 ( wall );
+        nFaces          13042;
+        startFace       106870;
+        sampleMode      nearestPatchFace;
+        sampleRegion    fluid;
+        samplePatch     fluid_to_ellipse;
+    }
+}
+
+Writing modified boundary
+Replacing entries in dictionary T
+Loading dictionary T
+Loaded dictionary T with entries 3(dimensions internalField boundaryField)
+Merging entries from 3(internalField boundaryField ellipse_to_fluid)
+Writing modified fieldDict T
+
+End
+

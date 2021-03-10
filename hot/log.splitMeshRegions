@@ -1,0 +1,109 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _7bdb509494-20201222 OPENFOAM=2012
+Arch   : "LSB;label=32;scalar=64"
+Exec   : splitMeshRegions -cellZones -overwrite
+Date   : Mar 10 2021
+Time   : 13:14:13
+Host   : LAPTOP-40EVH70C
+PID    : 1996
+I/O    : uncollated
+Case   : /home/zstyle/OpenFOAM_files/hot
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Creating single patch per inter-region interface.
+
+Trying to match regions to existing cell zones.
+
+
+Number of regions:2
+
+Writing region per cell file (for manual decomposition) to "/home/zstyle/OpenFOAM_files/hot/constant/cellToRegion"
+
+Writing region per cell as volScalarField to "/home/zstyle/OpenFOAM_files/hot/0/cellToRegion"
+
+Region	Cells
+------	-----
+0	80668
+1	36534
+
+Region	Zone	Name
+------	----	----
+0	1	fluid
+1	0	ellipse
+
+Sizes of interfaces between regions:
+
+Interface	Region	Region	Faces
+---------	------	------	-----
+0		0	1	13042
+
+Reading volScalarField: T alphat cellToRegion epsilon k p p_rgh rho
+Reading volVectorField: U
+
+
+Adding patches
+
+
+Adding patches
+
+For interface between region fluid and ellipse added patches
+    6	fluid_to_ellipse
+    7	ellipse_to_fluid
+
+Region 0
+-------- 
+Creating mesh for region 0 fluid
+Mapping fields
+Mapping field rho
+Mapping field cellToRegion
+Mapping field k
+Mapping field alphat
+Mapping field p_rgh
+Mapping field p
+Mapping field T
+Mapping field epsilon
+Mapping field U
+Deleting empty patches
+Writing new mesh
+Writing addressing to base mesh
+Writing map pointRegionAddressing from region0 points back to base mesh.
+Writing map faceRegionAddressing from region0 faces back to base mesh.
+Writing map cellRegionAddressing from region0 cells back to base mesh.
+Writing map boundaryRegionAddressing from region0 boundary back to base mesh.
+
+Region 1
+-------- 
+Creating mesh for region 1 ellipse
+Mapping fields
+Mapping field rho
+Mapping field cellToRegion
+Mapping field k
+Mapping field alphat
+Mapping field p_rgh
+Mapping field p
+Mapping field T
+Mapping field epsilon
+Mapping field U
+Deleting empty patches
+Writing new mesh
+Writing addressing to base mesh
+Writing map pointRegionAddressing from region1 points back to base mesh.
+Writing map faceRegionAddressing from region1 faces back to base mesh.
+Writing map cellRegionAddressing from region1 cells back to base mesh.
+Writing map boundaryRegionAddressing from region1 boundary back to base mesh.
+End
+

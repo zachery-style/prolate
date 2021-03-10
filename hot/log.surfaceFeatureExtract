@@ -1,0 +1,85 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _7bdb509494-20201222 OPENFOAM=2012
+Arch   : "LSB;label=32;scalar=64"
+Exec   : surfaceFeatureExtract
+Date   : Mar 10 2021
+Time   : 13:13:15
+Host   : LAPTOP-40EVH70C
+PID    : 1990
+I/O    : uncollated
+Case   : /home/zstyle/OpenFOAM_files/hot
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+Note: Feature line extraction only valid on closed manifold surfaces
+
+Reading surfaceFeatureExtractDict
+
+Surfaces     : ellip.stl
+Output       : ellip
+Load options : offset
+Write options: writeObj=yes writeVTK=off
+
+Statistics:
+Triangles    : 2026 in 1 region(s)
+Vertices     : 1015
+Bounding Box : (-0.01 -0.0399704 -0.01) (0.01 0.0399704 0.01)
+
+Constructing feature set from included angle 150
+Selecting edges based purely on geometric tests: no
+
+Initial Feature set:
+    points : 1
+    edges  : 15
+    of which
+        region edges   : 0
+        external edges : 9
+        internal edges : 6
+
+Final Feature set:
+    points : 16
+    of which
+        convex             : 0
+        concave            : 0
+        mixed              : 1
+        non-feature        : 15
+    edges  : 15
+    of which
+        external edges     : 9
+        internal edges     : 6
+        flat edges         : 0
+        open edges         : 0
+        multiply connected : 0
+
+Writing extendedFeatureEdgeMesh to "/home/zstyle/OpenFOAM_files/hot/constant/extendedFeatureEdgeMesh/ellip.extendedFeatureEdgeMesh"
+
+Writing extendedEdgeMesh components to "/home/zstyle/OpenFOAM_files/hot/constant/extendedFeatureEdgeMesh/ellip"
+Writing 0 convex feature points to "/home/zstyle/OpenFOAM_files/hot/constant/extendedFeatureEdgeMesh/ellip_convexFeaturePts.obj"
+Writing 0 concave feature points to "/home/zstyle/OpenFOAM_files/hot/constant/extendedFeatureEdgeMesh/ellip_concaveFeaturePts.obj"
+Writing 1 mixed feature points to "/home/zstyle/OpenFOAM_files/hot/constant/extendedFeatureEdgeMesh/ellip_mixedFeaturePts.obj"
+Writing 1 mixed feature point structure to "/home/zstyle/OpenFOAM_files/hot/constant/extendedFeatureEdgeMesh/ellip_mixedFeaturePtsStructure.obj"
+Writing 9 external edges to "/home/zstyle/OpenFOAM_files/hot/constant/extendedFeatureEdgeMesh/ellip_externalEdges.obj"
+Writing 6 internal edges to "/home/zstyle/OpenFOAM_files/hot/constant/extendedFeatureEdgeMesh/ellip_internalEdges.obj"
+Writing 0 flat edges to "/home/zstyle/OpenFOAM_files/hot/constant/extendedFeatureEdgeMesh/ellip_flatEdges.obj"
+Writing 0 open edges to "/home/zstyle/OpenFOAM_files/hot/constant/extendedFeatureEdgeMesh/ellip_openEdges.obj"
+Writing 0 multiple edges to "/home/zstyle/OpenFOAM_files/hot/constant/extendedFeatureEdgeMesh/ellip_multipleEdges.obj"
+Writing 0 region edges to "/home/zstyle/OpenFOAM_files/hot/constant/extendedFeatureEdgeMesh/ellip_regionEdges.obj"
+Writing 15 edge directions to "/home/zstyle/OpenFOAM_files/hot/constant/extendedFeatureEdgeMesh/ellip_edgeDirections.obj"
+
+Writing featureEdgeMesh to "/home/zstyle/OpenFOAM_files/hot/constant/triSurface/ellip.eMesh"
+ExecutionTime = 0.01 s  ClockTime = 0 s
+
+End
+

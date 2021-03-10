@@ -1,0 +1,83 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/fluid/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+7
+(
+    maxY
+    {
+        type            wall;
+        inGroups        1 ( wall );
+        nFaces          900;
+        startFace       242020;
+    }
+
+    minX
+    {
+        type            wall;
+        inGroups        1 ( wall );
+        nFaces          900;
+        startFace       242920;
+    }
+
+    maxX
+    {
+        type            wall;
+        inGroups        1 ( wall );
+        nFaces          900;
+        startFace       243820;
+    }
+
+    minY
+    {
+        type            wall;
+        inGroups        1 ( wall );
+        nFaces          900;
+        startFace       244720;
+    }
+
+    minZ
+    {
+        type            wall;
+        inGroups        1 ( wall );
+        nFaces          900;
+        startFace       245620;
+    }
+
+    maxZ
+    {
+        type            wall;
+        inGroups        1 ( wall );
+        nFaces          900;
+        startFace       246520;
+    }
+
+    fluid_to_ellipse
+    {
+        type            mappedWall;
+        inGroups        1 ( wall );
+        nFaces          13042;
+        startFace       247420;
+        sampleMode      nearestPatchFace;
+        sampleRegion    ellipse;
+        samplePatch     ellipse_to_fluid;
+    }
+
+)
+
+
+// ************************************************************************* //

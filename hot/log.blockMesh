@@ -1,0 +1,77 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _7bdb509494-20201222 OPENFOAM=2012
+Arch   : "LSB;label=32;scalar=64"
+Exec   : blockMesh
+Date   : Mar 10 2021
+Time   : 13:13:15
+Host   : LAPTOP-40EVH70C
+PID    : 1989
+I/O    : uncollated
+Case   : /home/zstyle/OpenFOAM_files/hot
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Creating block mesh from "system/blockMeshDict"
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 0
+		Number of boundary faces : 6
+		Number of defined boundary faces : 6
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list (topological search)...
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 0.01
+    Block 0 cell size :
+        i : 0.002 .. 0.002
+        j : 0.004 .. 0.004
+        k : 0.002 .. 0.002
+
+
+There are no merge patch pairs
+
+Writing polyMesh with 0 cellZones
+----------------
+Mesh Information
+----------------
+  boundingBox: (-0.03 -0.06 -0.03) (0.03 0.06 0.03)
+  nPoints: 29791
+  nCells: 27000
+  nFaces: 83700
+  nInternalFaces: 78300
+----------------
+Patches
+----------------
+  patch 0 (start: 78300 size: 900) name: maxY
+  patch 1 (start: 79200 size: 900) name: minX
+  patch 2 (start: 80100 size: 900) name: maxX
+  patch 3 (start: 81000 size: 900) name: minY
+  patch 4 (start: 81900 size: 900) name: minZ
+  patch 5 (start: 82800 size: 900) name: maxZ
+
+End
+
