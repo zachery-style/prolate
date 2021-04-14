@@ -1,0 +1,1 @@
+LIB = $(PWD)/../platforms/$(WM_OPTIONS)/lib/libheadache_4be0633f558cce96a8701b85600366d18eee499a

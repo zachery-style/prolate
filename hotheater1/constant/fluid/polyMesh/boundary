@@ -1,0 +1,83 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/fluid/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+7
+(
+    maxY
+    {
+        type            wall;
+        inGroups        1 ( wall );
+        nFaces          400;
+        startFace       41159;
+    }
+
+    minX
+    {
+        type            wall;
+        inGroups        1 ( wall );
+        nFaces          600;
+        startFace       41559;
+    }
+
+    maxX
+    {
+        type            wall;
+        inGroups        1 ( wall );
+        nFaces          600;
+        startFace       42159;
+    }
+
+    minY
+    {
+        type            wall;
+        inGroups        1 ( wall );
+        nFaces          400;
+        startFace       42759;
+    }
+
+    minZ
+    {
+        type            wall;
+        inGroups        1 ( wall );
+        nFaces          600;
+        startFace       43159;
+    }
+
+    maxZ
+    {
+        type            wall;
+        inGroups        1 ( wall );
+        nFaces          600;
+        startFace       43759;
+    }
+
+    fluid_to_ellipse
+    {
+        type            mappedWall;
+        inGroups        1 ( wall );
+        nFaces          462;
+        startFace       44359;
+        sampleMode      nearestPatchFace;
+        sampleRegion    ellipse;
+        samplePatch     ellipse_to_fluid;
+    }
+
+)
+
+
+// ************************************************************************* //

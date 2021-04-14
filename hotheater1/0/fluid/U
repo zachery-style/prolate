@@ -1,0 +1,62 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    location    "0/fluid";
+    object      U;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [ 0 1 -1 0 0 0 0 ];
+
+internalField   uniform ( 0 0 0 );
+
+boundaryField
+{
+    maxY
+    {
+        type            fixedValue;
+        value           uniform ( 0 0 0 );
+    }
+    minX
+    {
+        type            fixedValue;
+        value           uniform ( 0 0 0 );
+    }
+    maxX
+    {
+        type            fixedValue;
+        value           uniform ( 0 0 0 );
+    }
+    minY
+    {
+        type            fixedValue;
+        value           uniform ( 0 0 0 );
+    }
+    minZ
+    {
+        type            fixedValue;
+        value           uniform ( 0 0 0 );
+    }
+    maxZ
+    {
+        type            fixedValue;
+        value           uniform ( 0 0 0 );
+    }
+    fluid_to_ellipse
+    {
+        type            fixedValue;
+        value           uniform ( 0 0 0 );
+    }
+}
+
+
+// ************************************************************************* //

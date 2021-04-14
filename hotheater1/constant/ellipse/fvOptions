@@ -1,0 +1,112 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  dev                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      fvOptions;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+ 
+heatSource
+{
+    type            scalarSemiImplicitSource;
+    active          false;
+ 
+    scalarSemiImplicitSourceCoeffs
+    {
+        selectionMode   all; // all, cellSet, cellZone, points
+       // cellZone         ellipse;
+        volumeMode      specific; // absolute;
+        injectionRateSuSp
+        {
+            h     (1.0619e21 0);
+        }
+    }
+}
+
+
+limitTemperature
+{
+	type	limitTemperature;
+	active	false;
+	limitTemperatureCoeffs
+	{
+		selectionMode	all;
+	        min		0;
+		max		10e25;
+	}
+}
+
+
+
+   energySource
+    {
+        type            scalarCodedSource;
+        active          true;
+        name 	    	headache; 
+	
+        scalarCodedSourceCoeffs
+        {
+            
+            selectionMode	all;
+            fields        (h);
+	    
+
+            codeInclude
+            #{
+
+            #};
+
+            codeCorrect
+            #{
+                Pout<< "**codeCorrect**" << endl;
+            #};
+
+            codeAddSup
+            #{
+                const Time& time = mesh().time();
+		//const scalarField& V = mesh_.V();
+                const scalar  F_0 = 82; 			//Laser to heat-Jm^-2
+	 	const scalar  dt = 5e-9;			//Half-width-s
+	 	const scalar  t_0 = 30e-9;		        //Peak-s
+	 	const scalar  C = 4759e-18;      		//Laser absorption-m^3
+	 	const scalar  volu = 2.932153143e-26;           //Volume m^3
+		const scalar  F_t =(F_0/(dt*sqrt(2*3.1415)))*exp(-pow(time.value() - t_0,2)/(2*pow(dt,2)));
+                scalarField& hSource = eqn.source();
+		hSource = (C*F_t);
+            #};
+
+            codeConstrain
+            #{
+                Pout<< "**codeConstrain**" << endl;
+            #};
+
+            // Dummy entry. Make dependent on above to trigger recompilation
+            code
+            #{
+                $codeInclude
+                $codeCorrect
+                $codeAddSup
+                $codeSetValue
+            #};
+        }
+
+        sourceTimeCoeffs
+        {
+            $scalarCodedSourceCoeffs;
+        }
+    }
+
+
+
+ 
+ 
+// ************************************************************************* //

@@ -1,0 +1,129 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2012                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _7bdb509494-20201222 OPENFOAM=2012
+Arch   : "LSB;label=32;scalar=64"
+Exec   : changeDictionary -region fluid
+Date   : Apr 13 2021
+Time   : 19:31:26
+Host   : LAPTOP-40EVH70C
+PID    : 7767
+I/O    : uncollated
+Case   : /home/zstyle/OpenFOAM_files/hotheater1
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh fluid for time = 0
+
+Read dictionary changeDictionaryDict with replacements for dictionaries 8(boundary U T epsilon k p_rgh p rho)
+Reading polyMesh/boundary file to extract patch names
+Loaded dictionary boundary with entries 7(maxY minX maxX minY minZ maxZ fluid_to_ellipse)
+Extracted patch groups:
+    group wall with patches 7(maxY minX maxX minY minZ maxZ fluid_to_ellipse)
+Replacing entries in dictionary boundary
+Special handling of boundary as polyMesh/boundary file.
+Merging entries from 6(minX maxX minY maxY minZ maxZ)
+fieldDict:
+{
+    maxY
+    {
+        type            wall;
+        inGroups        1 ( wall );
+        nFaces          400;
+        startFace       41159;
+    }
+    minX
+    {
+        type            wall;
+        inGroups        1 ( wall );
+        nFaces          600;
+        startFace       41559;
+    }
+    maxX
+    {
+        type            wall;
+        inGroups        1 ( wall );
+        nFaces          600;
+        startFace       42159;
+    }
+    minY
+    {
+        type            wall;
+        inGroups        1 ( wall );
+        nFaces          400;
+        startFace       42759;
+    }
+    minZ
+    {
+        type            wall;
+        inGroups        1 ( wall );
+        nFaces          600;
+        startFace       43159;
+    }
+    maxZ
+    {
+        type            wall;
+        inGroups        1 ( wall );
+        nFaces          600;
+        startFace       43759;
+    }
+    fluid_to_ellipse
+    {
+        type            mappedWall;
+        inGroups        1 ( wall );
+        nFaces          462;
+        startFace       44359;
+        sampleMode      nearestPatchFace;
+        sampleRegion    ellipse;
+        samplePatch     ellipse_to_fluid;
+    }
+}
+
+Writing modified boundary
+Replacing entries in dictionary U
+Loading dictionary U
+Loaded dictionary U with entries 3(dimensions internalField boundaryField)
+Merging entries from 2(internalField boundaryField)
+Writing modified fieldDict U
+Replacing entries in dictionary T
+Loading dictionary T
+Loaded dictionary T with entries 3(dimensions internalField boundaryField)
+Merging entries from 2(internalField boundaryField)
+Writing modified fieldDict T
+Replacing entries in dictionary epsilon
+Loading dictionary epsilon
+Loaded dictionary epsilon with entries 3(dimensions internalField boundaryField)
+Merging entries from 2(internalField boundaryField)
+Writing modified fieldDict epsilon
+Replacing entries in dictionary k
+Loading dictionary k
+Loaded dictionary k with entries 3(dimensions internalField boundaryField)
+Merging entries from 2(internalField boundaryField)
+Writing modified fieldDict k
+Replacing entries in dictionary p_rgh
+Loading dictionary p_rgh
+Loaded dictionary p_rgh with entries 3(dimensions internalField boundaryField)
+Merging entries from 2(internalField boundaryField)
+Writing modified fieldDict p_rgh
+Replacing entries in dictionary p
+Loading dictionary p
+Loaded dictionary p with entries 3(dimensions internalField boundaryField)
+Merging entries from 2(internalField boundaryField)
+Writing modified fieldDict p
+Replacing entries in dictionary rho
+Loading dictionary rho
+Loaded dictionary rho with entries 3(dimensions internalField boundaryField)
+Merging entries from 2(internalField boundaryField)
+Writing modified fieldDict rho
+
+End
+
